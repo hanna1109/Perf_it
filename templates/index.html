@@ -5,9 +5,107 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Perf_it</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;}
+        body {
+           background: linear-gradient(to right bottom, #353894, #3f3fa3, #4946b2, #534ec1, #5e55d1);
+            overflow: hidden;
+        }
+        .wrap {
+            width: 100%;
+            height: 100%;
+        }
+        .title {
+            padding-top: 100px;
+            text-align: center;
+            color:#ffffff;
+            font-size: 1.5em;
+            height: auto;
+            font-weight: normal;
+        }
+        .main_img {
+            text-align: center;
+            width: 600px;
+            height: 250px;
+            margin: 0 auto;
+        }
+        .start_btn {
+            width: 300px;
+            height: 60px;
+
+            text-align: center;
+            margin: 0 auto;
+        }
+        .start_btn button {
+            border-radius: 30px;
+               background-color: #7B00FF;
+            border: 2px double #ffffff;
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 3px;
+        }
+        .start_btn button:hover {
+            background-color:#FFF008 ;
+            color:#7B00FF;
+        }
+
+        .back_image {
+            position: absolute;
+            top: 20%;
+            z-index: -89999;
+        }
+          .back_image img {
+              width: 100%;
+            height: 100%;
+            opacity: 0.2}
+            .perfume_set
+            {
+                text-align: center;
+            }
+          .perfume_set img {
+              width: 900px;
+              height: 500px;
+          }
+
+    </style>
 </head>
 <body>
-    <h2 class="title">hello world</h2>
+
+<div class="wrap">
+
+    <h2 class="title">향수를 내 몸에 Fit하다</h2>
+    <br><br>
+    <br><br>
+    <h2 class="main_img">
+        <img src="../img/maintitle.png" alt="">
+    </h2>
+    <br>
+    <br>
+    <br>
+    <div class="start_btn">
+        <button class="start">
+        테스트 시작하기
+    </button>
+    </div>
+
+
+<div class="back_image">
+    <img src="../img/bg1.png" alt="">
+</div>
+<br>
+    <br>
+<div class="perfume_set">
+    <img src="../img/bg2.png" alt="">
+</div>    
+</div>
+
 </body>
 </html>
