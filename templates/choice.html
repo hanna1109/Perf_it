@@ -8,10 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <style>
-
+* {height: auto}
         body {
             background: linear-gradient(to right bottom, #353894, #3f3fa3, #4946b2, #534ec1, #5e55d1);
-            overflow: hidden;
+            overflow: scroll;
+            height: auto;
             font-family: 'Noto Sans KR', sans-serif;
         }
 
@@ -25,7 +26,7 @@
         }
 
         main {
-            height: auto
+            height: 100%;
         }
 
         .main_img {
@@ -42,12 +43,12 @@
         }
 
         .answer_box {
-            width: 25%;
+            width: 27%;
             margin: 0 auto;
         }
 
         .answer_box li {
-            width: 300px;
+            width: 500px;
             height: 40px;
             border-radius: 30px;
             border: 2px solid #7B00FF;
@@ -69,11 +70,17 @@
         }
 
         .answer_box li a {
+            width: 100%;
+            height: 100%;
             color: #7B00FF;
             font-size: 1.2em;
             font-weight: 800;
             line-height: 2;
 
+        }
+
+        .answer_box li:active {
+            background-color: #ddd;
         }
     </style>
 
@@ -111,6 +118,50 @@
         .ans_btn:active {
             background-color: #ddd;
         }
+
+        #btn_style {
+            width: 240px;
+            height: 30px;
+
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 30px;
+            background-color: #7B00FF;
+            border: 2px double #ffffff;
+            color: #ffffff;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 3px;
+            padding: 10px;
+            display: block;
+        }
+
+         #btn_style:hover {
+            background-color: #FFF008;
+            color: #7B00FF;
+        }
+
+         .desc {
+             width: 20%;
+             height: 60px;
+             background: blueviolet;
+             margin: 0 auto;
+             text-align: center;
+             padding: 15px;
+             color: #ffffff;
+             font-weight: 1.2em;
+             border-radius: 10px;
+         }
+         .type-text {
+             color: #ffffff;text-align: center;
+             display: block;
+             margin-bottom: 10px;
+
+         }
+         .type-btn a {color:#ffffff;}
+         .type-btn:hover a {color: #7B00FF}
     </style>
     <script>
         $(document).ready(function () {
@@ -167,62 +218,127 @@
         <br>
         <br>
 
+        <div class="desc">
+            아래 질문지를 보고 a~d 중 선택지를 고릅니다.<br>
+            A,B,C,D 중 가장 많이 나온 유형을 기억해주세요.<br>
+        </div>
+        <br><br>
+
         <div class="choice_box">
-            <!--            문제1-->
-            <div class="quiz">
-                <h2 class="quiz-content">
-                    Q. 가장 좋아하는 계절은?
-                </h2>
-                <br><br>
-                <div class="answer_box">
-                    <button class="ans_btn" onclick="btn_click('A')" id="type_A">봄</button>
-                    <button class="ans_btn" onclick="btn_click('B')" id="type_B">여름</button>
-                    <button class="ans_btn" onclick="btn_click('C')" id="type_C">가을</button>
-                    <button class="ans_btn" onclick="btn_click('D')" id="type_D">겨울</button>
-                </div>
-            </div>
-            <!--문제2-->
-            <div class="quiz">
-                <h2 class="quiz-content">
-                    Q. 집 한채를 장만하게 되면, 내가 살게 될 집은?
-                </h2>
-                <br><br>
-                <div class="answer_box">
-                    <button class="ans_btn" onclick="btn_click('A')" id="type_A">사랑스러운 연인과 함께하는 도심 속 풀빌라</button>
-                    <button class="ans_btn" onclick="btn_click('B')" id="type_B">시원한 바다가 한 눈에 보이는 별장</button>
-                    <button class="ans_btn" onclick="btn_click('C')" id="type_C">꽃이 가득한 정원이 있는 주택</button>
-                    <button class="ans_btn" onclick="btn_click('D')" id="type_D">편안한 우디향으로 가득한 숲속의 집</button>
-                </div>
-            </div>
-<!--            문제3-->
-             <div class="quiz">
-                <h2 class="quiz-content">
-                    Q. 사랑을 한다면 어떤 사랑을 하고 싶은가
-                </h2>
-                <br><br>
-                <div class="answer_box">
-                    <button class="ans_btn" onclick="btn_click('A')" id="type_A">고귀하고 성스러운 사랑</button>
-                    <button class="ans_btn" onclick="btn_click('B')" id="type_B">아름답고 신비로운 사랑</button>
-                    <button class="ans_btn" onclick="btn_click('C')" id="type_C">차갑고 도도하지만 섬세한 사랑</button>
-                    <button class="ans_btn" onclick="btn_click('D')" id="type_D">강렬하고 화려한 사랑</button>
-                </div>
-            </div>
+            <h2 class="quiz-content">
+                Q1. 가장 좋아하는 계절은?
+            </h2>
+
+            <!--            <div class="quiz">-->
+            <!--                <h2 class="quiz-content">-->
+            <!--                    Q. 가장 좋아하는 계절은?-->
+            <!--                </h2>-->
+            <!--                <br><br>-->
+            <!--                <div class="answer_box">-->
+            <!--                    <button class="ans_btn" onclick="btn_click('A')" id="type_A">봄</button>-->
+            <!--                    <button class="ans_btn" onclick="btn_click('B')" id="type_B">여름</button>-->
+            <!--                    <button class="ans_btn" onclick="btn_click('C')" id="type_C">가을</button>-->
+            <!--                    <button class="ans_btn" onclick="btn_click('D')" id="type_D">겨울</button>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
 
             <br>
-            <br>
-            <!--            <ul class="answer_box">-->
-            <!--                <li class="answer">-->
-            <!--                    <a href="">봄</a>-->
-            <!--                </li>-->
-            <!--                <li class="answer"><a href="">여름</a></li>-->
-            <!--                <li class="answer"><a href="">가을</a></li>-->
-            <!--                <li class="answer"><a href="">겨울</a></li>-->
-            <!--            </ul>-->
-
-
+            <ul class="answer_box">
+                <li class="answer">
+                    <a href="">a.봄</a>
+                </li>
+                <li class="answer"><a href="1b">b.여름</a></li>
+                <li class="answer"><a href="2b">c.가을</a></li>
+                <li class="answer"><a href="3b">d.겨울</a></li>
+            </ul>
 
 
         </div>
+        <br>
+        <br>
+<!--q2-->
+        <div class="choice_box">
+            <h2 class="quiz-content">
+                Q2. 사랑을 한다면 어떤 사랑을 하고 싶은가
+            </h2>
+            <br>
+            <ul class="answer_box">
+                <li class="answer"><a href="2a">a.강렬하고 화려한 사랑</a></li>
+                <li class="answer"><a href="2b">b.아름답고 신비로운 사랑</a></li>
+                <li class="answer"><a href="2c">c.차갑고 도도하지만 섬세한 사랑</a></li>
+                <li class="answer"><a href="2c">d.고귀하고 성스러운 사랑</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+<!--        q3-->
+        <div class="choice_box">
+            <h2 class="quiz-content">
+                Q3. 간만에 휴가, 당신은 무엇을 할 것인가
+            </h2>
+            <br>
+            <ul class="answer_box">
+                <li class="answer"><a href="2a">a.반려동물과 포근한 낮잠을 잔다.</a></li>
+                <li class="answer"><a href="2b">b.친구들과 함께 보낸다.</a></li>
+                <li class="answer"><a href="2c">c.연인과 함께 시간을 보낸다</a></li>
+                <li class="answer"><a href="2c">d.혼자만의 시간을 즐긴다</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+<!--        q4-->
+        <div class="choice_box">
+            <h2 class="quiz-content">
+                Q4. 집 한채를 장만하게 되면, 내가 살게 될 집은?
+            </h2>
+            <br>
+            <ul class="answer_box">
+                <li class="answer"><a href="2a">a.편안한 우디향으로 가득한 숲속의 집</a></li>
+                <li class="answer"><a href="2b">b.시원한 바다가 한 눈에 보이는 별장</a></li>
+                <li class="answer"><a href="2c">c.꽃이 가득한 정원이 있는 주택</a></li>
+                <li class="answer"><a href="2c">d.사랑스러운 연인과 함께하는 도심 속 풀빌라</a></li>
+            </ul>
+        </div>
+        <br>
+        <br>
+
+<!--        q5-->
+ <div class="choice_box">
+            <h2 class="quiz-content">
+                Q5. 나를 가장 잘 표현하는 색은?
+            </h2>
+            <br>
+            <ul class="answer_box">
+                <li class="answer"><a href="2a">a.깨끗한 순백의 화이트</a></li>
+                <li class="answer"><a href="2b">b.시크한 블랙</a></li>
+                <li class="answer"><a href="2c">c.시원하고 청량한 블루</a></li>
+                <li class="answer"><a href="2c">d.우아하고 화사한 핑크</a></li>
+            </ul>
+        </div>
+        <br>
+
+         <div class="desc">
+            가장 많이 나온 알파벳을 기억하셨나요?<br>
+             아래 유형을 클릭해 결과를 확인해주세요
+        </div>
+        <br><br>
+
+<!--        결과보기-->
+<!--            <a href="result.html" class="start" id="btn_style">결과보기</a>-->
+        <ul class="result-box" style="text-align: center">
+            <span class="type-text" style="">a가 많이 나왔다면?</span>
+            <li class="type-btn" id="btn_style"><a href="resultA.html" style="">A유형 보기</a></li><br>
+            <span class="type-text" style="">B가 많이 나왔다면?</span>
+            <li class="type-btn" id="btn_style"><a href="resultB.html" style="">B유형 보기</a></li><br>
+            <span class="type-text" style="">C가 많이 나왔다면?</span>
+            <li class="type-btn" id="btn_style"><a href="resultC.html" style="c">C유형 보기</a></li><br>
+            <span class="type-text" style="">D가 많이 나왔다면?</span>
+            <li class="type-btn" id="btn_style"><a href="resultD.html" style="">D유형 보기</a></li><br>
+        </ul>
+        <br>
+        <br>
+        <br>
     </main>
 
 
